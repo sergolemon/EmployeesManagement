@@ -1,0 +1,23 @@
+﻿<Window x:Class="Presentation.Views.EmployeeDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentation.Views"
+        mc:Ignorable="d"
+        Title="EmployeeDetailsWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="{Binding FullName, Mode=OneWay, StringFormat=Імя: {0}}" />
+            <TextBlock Text="{Binding Address, Mode=OneWay, StringFormat=Адреса: {0}}" />
+            <TextBlock Text="{Binding PhoneNumber, Mode=OneWay, StringFormat=Номер телефону: {0}}" />
+            <TextBlock Text="{Binding Position, Mode=OneWay, StringFormat=Посада: {0}}" />
+            <TextBlock Text="{Binding Status, Mode=OneWay, StringFormat=Статус: {0}}" />
+            <TextBlock Text="{Binding Salary, Mode=OneWay, StringFormat=Заробітна плата: {0:C}}" />
+            <TextBlock Text="{Binding BirthDate, Mode=OneWay, StringFormat=Дата народження: {0}}" />
+            <TextBlock Text="{Binding ReqruitDate, Mode=OneWay, StringFormat=Дата найму: {0}}" />
+            <TextBlock Text="{Binding QuitDate, Mode=OneWay, StringFormat=Дата звільнення: {0}}" />
+            <Button Content="звільнити" Click="Button_Click" Visibility="{Binding QuitBtnVisibility}" />
+        </StackPanel>
+    </Grid>
+</Window>
