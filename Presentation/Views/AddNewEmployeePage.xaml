@@ -150,7 +150,7 @@
             </StackPanel>
             <StackPanel Margin="10" Orientation="Horizontal">
                 <TextBlock Padding="5" Text="Дата народження" Width="200" TextAlignment="Center"/>
-                <DatePicker Padding="5" Grid.Column="1" Text="{Binding BirthDate, Mode=TwoWay}" Width="200">
+                <DatePicker Language="uk-UA" Padding="5" Grid.Column="1" Text="{Binding BirthDate, Mode=TwoWay}" Width="200">
                     <Validation.ErrorTemplate>
                         <ControlTemplate>
                             <StackPanel>
