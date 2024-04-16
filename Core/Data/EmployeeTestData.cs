@@ -13,7 +13,7 @@ namespace Core.Data
             {
                 new Employee
                 {
-                    Id = 1,
+                    Id = Guid.NewGuid(),
                     FirstName = "John",
                     LastName = "Snow",
                     PhoneNumber = "123-456-7890",
@@ -26,7 +26,7 @@ namespace Core.Data
                 },
                 new Employee
                 {
-                    Id = 2,
+                    Id = Guid.NewGuid(),
                     FirstName = "Maria",
                     LastName = "Sidrenko",
                     Patronymic = "Petrovna",
@@ -41,7 +41,7 @@ namespace Core.Data
                 },
                 new Employee
                 {
-                    Id = 3,
+                    Id = Guid.NewGuid(),
                     FirstName = "John",
                     LastName = "Smith",
                     Patronymic = "Michael",
@@ -55,7 +55,7 @@ namespace Core.Data
                 },
                 new Employee
                 {
-                    Id = 4,
+                    Id = Guid.NewGuid(),
                     FirstName = "Jane",
                     LastName = "Doe",
                     Patronymic = "Marie",

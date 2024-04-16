@@ -10,7 +10,7 @@ namespace Presentation.ViewModels.Controls
 {
     public class EmployeeItemVm : ObservableObject
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         private string fullName;
         public string FullName { get => fullName; set => SetProperty(ref fullName, value); }

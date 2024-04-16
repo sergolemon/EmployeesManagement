@@ -64,7 +64,7 @@ namespace Core.Repositories
             await dbContext.SaveChangesAsync();
         }
 
-        public async Task<Employee?> GetByIdOrNullAsync(int id)
+        public async Task<Employee?> GetByIdOrNullAsync(Guid id)
         {
             using var dbContext = _dbContextFactory.CreateDbContext();
 

@@ -14,7 +14,7 @@ namespace Core.Interfaces
         Task RemoveAsync(params Employee[] employees);
         Task AddAsync(params Employee[] employees);
         Task<int> GetCountByWorkEmployeesAsync();
-        Task<Employee?> GetByIdOrNullAsync(int id);
+        Task<Employee?> GetByIdOrNullAsync(Guid id);
         Task<decimal> GetAverageSalaryByWorkEmployeesAsync();
         Task UpdateAsync(Employee employee);
     }

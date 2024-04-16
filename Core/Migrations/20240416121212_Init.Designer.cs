@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Core.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240415062023_Init")]
+    [Migration("20240416121212_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -22,9 +22,9 @@ namespace Core.Migrations
 
             modelBuilder.Entity("Core.Data.Entities.Employee", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
+                        .HasColumnType("TEXT")
                         .HasColumnName("employee_id");
 
                     b.Property<string>("Address")
@@ -83,7 +83,7 @@ namespace Core.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = new Guid("fcd881e5-61e0-4237-b21a-37fac3195e53"),
                             Address = "вул. Гагаріна, буд. 10",
                             BirthDate = new DateTime(1990, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "John",
@@ -96,7 +96,7 @@ namespace Core.Migrations
                         },
                         new
                         {
-                            Id = 2,
+                            Id = new Guid("776ac3a7-267b-48fd-b29f-f188a3c61746"),
                             Address = "просп. Перемоги, буд. 5",
                             BirthDate = new DateTime(1985, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Maria",
@@ -111,7 +111,7 @@ namespace Core.Migrations
                         },
                         new
                         {
-                            Id = 3,
+                            Id = new Guid("0c1e0bce-3fb4-4e56-8528-e929c1fbcf37"),
                             Address = "123 Main St",
                             BirthDate = new DateTime(1987, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "John",
@@ -125,7 +125,7 @@ namespace Core.Migrations
                         },
                         new
                         {
-                            Id = 4,
+                            Id = new Guid("f786689b-4484-425a-9dff-39a0851a2a3c"),
                             Address = "456 Elm St",
                             BirthDate = new DateTime(1992, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Jane",
