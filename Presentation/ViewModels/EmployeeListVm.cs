@@ -54,14 +54,15 @@ namespace Presentation.ViewModels
 
             if (!string.IsNullOrEmpty(query))
                 filtersExpr = empl => (empl.LastName + " " + empl.FirstName + " " + empl.Patronymic).ToLower().Contains(query) || empl.PhoneNumber.Contains(query);
-
             var employees = await _employeeRepository.GetAsync(filtersExpr);
             var items = employees.Select(empl => new EmployeeItemVm(empl, DeleteEmployeeItemAsync, DetailsEmployeeItemAsync));
-
-            Count = await _employeeRepository.GetCountByWorkEmployeesAsync();
-            if (Count > 0) AverageSalary = await _employeeRepository.GetAverageSalaryByWorkEmployeesAsync(); else AverageSalary = 0;
-
-            await _dispatcher.BeginInvoke(() => { Employees = new ObservableCollection<EmployeeItemVm>(items); });
+            
+            await _dispatcher.BeginInvoke(async () => 
+            {
+                Count = await _employeeRepository.GetCountByWorkEmployeesAsync();
+                if (Count > 0) AverageSalary = await _employeeRepository.GetAverageSalaryByWorkEmployeesAsync(); else AverageSalary = 0;
+                Employees = new ObservableCollection<EmployeeItemVm>(items); 
+            });
         }
 
         private async Task DeleteEmployeeItemAsync(EmployeeItemVm employee)
