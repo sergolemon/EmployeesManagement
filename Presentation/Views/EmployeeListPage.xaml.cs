@@ -41,14 +41,7 @@ namespace Presentation.Views
         {
             _viewModel.SearchQuery = (sender as TextBox)!.Text;
 
-            if (string.IsNullOrEmpty(_viewModel.SearchQuery))
-            {
-                await _viewModel.InitAsync();
-            }
-            else
-            {
-                await _viewModel.InitAsync();
-            }
+            await _viewModel.InitAsync();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
